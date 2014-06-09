@@ -778,7 +778,8 @@ void TCOD_sys_startup() {
 	SDL_LogSetAllPriority(SDL_LOG_PRIORITY_VERBOSE);
 #endif
 #endif
-	TCOD_IFNOT(SDL_Init(SDL_INIT_TIMER|SDL_INIT_VIDEO) >= 0 ) return;
+/*	TCOD_IFNOT(SDL_Init(SDL_INIT_TIMER|SDL_INIT_VIDEO) >= 0 ) return;*/
+	TCOD_IFNOT(SDL_Init(SDL_INIT_VIDEO) >= 0 ) return;
 #ifndef	TCOD_WINDOWS
 	/* not needed and might crash on windows */
 	atexit(SDL_Quit);
